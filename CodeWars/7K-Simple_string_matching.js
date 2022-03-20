@@ -17,3 +17,6 @@ function solve(a,b){
 
 /* Top solutions analysis */
 const solve =(a,b) => new RegExp(`^${a.replace('*','.*')}$`).test(b);
+
+// I went with the longer solution above because I couldn't get the regexp that I made then to work
+// I was missing the ^ and $ boundary
