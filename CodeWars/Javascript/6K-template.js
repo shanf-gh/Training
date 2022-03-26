@@ -1,5 +1,5 @@
 /* 
-Level: 7 kyu
+Level: 6 kyu
 Link: 
 */
 
