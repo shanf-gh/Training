@@ -21,3 +21,6 @@ function solution(number){
 }
 
 // Solution using arithmetic sequence
+// First find the biggest mutiple, then use the sum formula of arithmetic progression.
+// n*(n+1)/2 is the arithmetic progession formula of any given n number.
+// With this in mind you can find the arithmetic progression of a multiple series as well.
