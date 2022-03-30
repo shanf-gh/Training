@@ -24,3 +24,16 @@ function solution(number){
 // First find the biggest mutiple, then use the sum formula of arithmetic progression.
 // n*(n+1)/2 is the arithmetic progession formula of any given n number.
 // With this in mind you can find the arithmetic progression of a multiple series as well.
+
+function findOdd(A) {
+  var obj = {};
+  A.forEach(function(el){
+    obj[el] ? obj[el]++ : obj[el] = 1;
+  });
+  
+  for(prop in obj) {
+    if(obj[prop] % 2 !== 0) return Number(prop);
+  }
+}
+
+// A bit more compact version of my code
