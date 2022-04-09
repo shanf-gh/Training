@@ -6,6 +6,9 @@ function searchDrink() {
     fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drink)
     .then(res => res.json())
     .then(data => {
+        
+
+
         let drink = data.drinks[0];
         document.querySelector('h2').innerText = drink.strDrink;
         document.querySelector('img').src = drink.strDrinkThumb;
