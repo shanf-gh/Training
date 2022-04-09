@@ -6,13 +6,34 @@ function searchDrink() {
     fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drink)
     .then(res => res.json())
     .then(data => {
-        
-
+        let drinkCard = document.querySelector('.drink-card')
 
         let drink = data.drinks[0];
-        document.querySelector('h2').innerText = drink.strDrink;
-        document.querySelector('img').src = drink.strDrinkThumb;
-        document.querySelector('.cocktail-instructions').innerText = drink.strInstructions;
+
+        // create an array of ingredients
+        let ingredients = [];
+        for(let i = 1; i < 15; i++) {
+            let measure = drink[`strMeasure${i}`];
+            let ingredient = drink[`strIngredient${i}`];
+            
+            if(measure === null) {
+                measure = '';
+            }
+
+            if(ingredient!==null) {
+                ingredients.push(measure + ingredient);
+            }
+        }
+
+
+        // set values in HTML elements
+        drinkCard.querySelector('h2').innerText = drink.strDrink;
+        drinkCard.querySelector('img').src = drink.strDrinkThumb;
+        drinkCard.querySelector('.list-ingredients > ul').innerHTML = ingredients.reduce((acc, val) => acc += `<li>${val}</li>`, '');
+        drinkCard.querySelector('.cocktail-instructions p').innerText = drink.strInstructions;
+        // Show the card
+        drinkCard.style.display = "block";
+
         console.log(data);
     })
     .catch(err => {
