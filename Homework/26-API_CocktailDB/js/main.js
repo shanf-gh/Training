@@ -12,7 +12,7 @@ function searchDrink() {
         let drink = data.drinks[0];
         document.querySelector('h2').innerText = drink.strDrink;
         document.querySelector('img').src = drink.strDrinkThumb;
-        document.querySelector('h3').innerText = drink.strInstructions;
+        document.querySelector('.cocktail-instructions').innerText = drink.strInstructions;
         console.log(data);
     })
     .catch(err => {
