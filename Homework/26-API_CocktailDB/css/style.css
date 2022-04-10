@@ -25,15 +25,25 @@ img {
   width: 100%;
 }
 
+.drink-card-container {
+  width: 700px;
+  margin: 0 auto;
+}
+
 .drink-card {
-  width:700px;
+  width:100%;
   background-color: #fff;
   color: #000;
-  border-radius: 15px;
-  margin: 0 auto;
   margin-top: 30px;
+  border-radius: 15px;
   padding: 30px;
-  display: none;
+  position: relative;
+}
+
+.drink-card-number {
+  position: absolute;
+  padding-right: 20px;
+  right: 0;
 }
 
 .drink-card > h2 {
