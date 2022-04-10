@@ -1,4 +1,11 @@
 //The user will enter a cocktail. Get a cocktail name, photo, and instructions and place them in the DOM
+function CreateDrinkCard(name, thumbnail, ingredients, instructions) {
+    this.name = name;
+    this.drinkThumb = drinkThumb;
+    this.ingredients = ingredients;
+    this.instructions = instructions;
+}
+
 function searchDrink() {
 
     let drink = document.querySelector('input').value;
@@ -32,7 +39,7 @@ function searchDrink() {
         drinkCard.querySelector('.list-ingredients > ul').innerHTML = ingredients.reduce((acc, val) => acc += `<li>${val}</li>`, '');
         drinkCard.querySelector('.cocktail-instructions p').innerText = drink.strInstructions;
         // Show the card
-        drinkCard.style.display = "block";
+        // drinkCard.style.display = "block";
 
         console.log(data);
     })
