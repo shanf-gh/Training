@@ -9,7 +9,7 @@ function CreateDrinkCard(name, drinkThumb, ingredients, instructions) {
 function generateDrinkCard(obj, index, numberOfCards) {
     return `
         <section class="drink-card">
-            <div class="drink-card-number">${index}/${numberOfCards}</div>
+            <div class="drink-card-number">${index} / ${numberOfCards}</div>
             <h2>${obj.name}</h2>
             <section class="drink-info">
                 <div class="left-panel">
@@ -54,11 +54,13 @@ function searchDrink() {
     .then(res => res.json())
     .then(data => {
         const drinkContainer = document.querySelector('.drink-card-container');
+        // clear drink container
+        drinkContainer.innerHTML = '';
         const drinks = data.drinks;
         
         drinks.forEach((drink, index) => {
             let ingredients = generateIngredientsArray(drink);
-        
+            // Create new drink object
             let newDrink = new CreateDrinkCard(drink.strDrink, drink.strDrinkThumb, ingredients, drink.strInstructions)
             // append new drink card
             drinkContainer.innerHTML += generateDrinkCard(newDrink, index + 1, drinks.length);
