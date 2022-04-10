@@ -1,10 +1,19 @@
 //The user will enter a cocktail. Get a cocktail name, photo, and instructions and place them in the DOM
+
+// #####################################################
+// #################### Constructors ###################
+// #####################################################
+
 function CreateDrinkCard(name, drinkThumb, ingredients, instructions) {
     this.name = name;
     this.drinkThumb = drinkThumb;
     this.ingredients = ingredients;
     this.instructions = instructions;
 }
+
+// #####################################################
+// ################# Generate elements fn ##############
+// #####################################################
 
 function generateDrinkCard(obj, index, numberOfCards) {
     return `
@@ -46,6 +55,16 @@ function generateIngredientsArray(obj) {
     return ingredients;
 }
 
+// #####################################################
+// ################# Card navigation ###################
+// #####################################################
+
+
+
+// #####################################################
+// ##################### API Call ######################
+// #####################################################
+
 function searchDrink() {
 
     let drink = document.querySelector('input').value;
@@ -71,5 +90,9 @@ function searchDrink() {
     });
 } 
 
+
+// #####################################################
+// ################# Event listeners ###################
+// #####################################################
 
 document.querySelector('button').addEventListener('click', searchDrink)
