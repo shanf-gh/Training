@@ -17,7 +17,7 @@ function CreateDrinkCard(name, drinkThumb, ingredients, instructions) {
 
 function generateDrinkCard(obj, index, numberOfCards) {
     return `
-        <section class="drink-card">
+        <section class="drink-card ${index === 1 ? 'active' : ''}">
             <div class="drink-card-number">${index} / ${numberOfCards}</div>
             <h2>${obj.name}</h2>
             <section class="drink-info">
@@ -58,8 +58,26 @@ function generateIngredientsArray(obj) {
 // #####################################################
 // ################# Card navigation ###################
 // #####################################################
+function changeCard(n) {
+    // get list of all drink cards
+    let drinkCards = document.querySelectorAll(".drink-card");
+    // determine the current active card
+    let activeCardIndex = [...drinkCards].findIndex(card => card.classList.contains("active"));
 
+    // determine the index of the next card to show
+    // check if the extremities of the array
+    let showCardIndex = activeCardIndex + n;
 
+    if(showCardIndex >= drinkCards.length) {
+        showCardIndex = 0;
+    } else if (showCardIndex < 0) {
+        showCardIndex = drinkCards.length - 1;
+    }
+
+    // toggle active and new cards
+    drinkCards[activeCardIndex].classList.toggle("active");
+    drinkCards[showCardIndex].classList.toggle("active");
+}
 
 // #####################################################
 // ##################### API Call ######################

@@ -81,10 +81,11 @@ img {
   border-radius: 15px;
   padding: 30px;
   position: relative;
+  display: none;
 }
 
-.drink-card + .drink-card {
-  display: none;
+.drink-card.active {
+  display: block;
 }
 
 .drink-card-number {
