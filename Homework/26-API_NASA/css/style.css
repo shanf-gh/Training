@@ -15,12 +15,68 @@ body {
 /******************************************
 /* LAYOUT
 /*******************************************/
+.body-head {
+  margin-left: 100px;
+  margin-bottom: 100px;
+}
+
+.body-head input,
+.body-head button {
+  color: #000;
+}
+
 img{
+  width: 100%;
   display: block;
   margin: 0 auto;
 }
 
+.picture-card {
+  width: 900px;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  margin: 30px auto;
+  padding: 10px 20px 40px 20px;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+.picture-card > header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.picture-card > header > * {
+  margin: 0;
+}
+
+.picture-data {
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: 2%;
+  width: 100%;
+}
+
+.picture-data > * {
+  width: 49%;
+}
+
+.picture-info > p {
+  margin: 0;
+}
+
+/******************************************
+/* Media query
+/*******************************************/
+
+@media screen and (max-width: 950px) {
+  .picture-data > * {
+    width: 100%;
+  }
+}
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+
