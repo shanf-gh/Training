@@ -12,16 +12,45 @@ function getFetch(){
   fetch(url)
       .then(res => res.json()) // parse response as JSON
       .then(data => {
-        console.log(data);
-        if('copyright' in data) {
-          document.querySelector('p').innerText = `Photo by ${data.copyright}`;
-        }
+        let container = document.querySelector(".picture-card");
+        // console.log(data);
+        // if('copyright' in data) {
+        //   document.querySelector('p').innerText = `Photo by ${data.copyright}`;
+        // }
 
-        document.querySelector('h2').innerText = data.title;
-        document.querySelector('img').src = data.url;
-        document.querySelector('h3').innerText = data.explanation;
+        // document.querySelector('h2').innerText = data.title;
+        // document.querySelector('img').src = data.url;
+        // document.querySelector('h3').innerText = data.explanation;
+        
+        container.innerHTML = generatePictureCard(data);
+
+        // display the container
+        container.style.display = 'block';
       })
       .catch(err => {
           console.log(`error ${err}`)
       });
+}
+
+
+function generatePictureCard(obj) {
+  let copyright = '';
+  if('copyright' in obj) {
+    copyright = `<h4 class="picture-copyright">Photo by <span>${obj.copyright}</span></h4>`;
+  }
+
+  return `
+    <header>
+      <h2 class="picture-title">${obj.title}</h2>
+      ${copyright||''}
+    </header>
+    <section class="picture-data">
+      <section class="picture">
+        <img src="${obj.url}" alt="${obj.title}">
+      </section>
+      <section class="picture-info">
+        <p>${obj.explanation}</p>
+      </section>
+    </section>
+  `
 }
