@@ -5,6 +5,11 @@
 /* Box Model Hack */
 *{
   box-sizing: border-box;
+  color: #fff;
+}
+
+body {
+  background-image: url('https://www.nasa.gov/sites/default/files/thumbnails/image/hubble_arp143.png');
 }
 
 /******************************************
