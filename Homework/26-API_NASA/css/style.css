@@ -67,6 +67,8 @@ img{
   margin: 0;
 }
 
+
+
 /******************************************
 /* Media query
 /*******************************************/
@@ -75,7 +77,20 @@ img{
   .picture-data > * {
     width: 100%;
   }
+
+  .picture {
+    display: flex;
+    justify-content: center;
+  }
+
+  iframe  {
+    height: 300px;
+    width: 600px
+  }
+
 }
+
+
 
 /******************************************
 /* ADDITIONAL STYLES

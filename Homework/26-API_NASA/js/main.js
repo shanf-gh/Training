@@ -13,14 +13,7 @@ function getFetch(){
       .then(res => res.json()) // parse response as JSON
       .then(data => {
         let container = document.querySelector(".picture-card");
-        // console.log(data);
-        // if('copyright' in data) {
-        //   document.querySelector('p').innerText = `Photo by ${data.copyright}`;
-        // }
-
-        // document.querySelector('h2').innerText = data.title;
-        // document.querySelector('img').src = data.url;
-        // document.querySelector('h3').innerText = data.explanation;
+        console.log(data);
         
         container.innerHTML = generatePictureCard(data);
 
@@ -39,6 +32,12 @@ function generatePictureCard(obj) {
     copyright = `<h4 class="picture-copyright">Photo by <span>${obj.copyright}</span></h4>`;
   }
 
+  if(obj.media_type === 'video') {
+    media = `<iframe src="${obj.url}"></iframe>`;
+  } else if(obj.media_type === 'image') {
+    media = `<img src="${obj.url}" alt="${obj.title}">`;
+  }
+
   return `
     <header>
       <h2 class="picture-title">${obj.title}</h2>
@@ -46,7 +45,7 @@ function generatePictureCard(obj) {
     </header>
     <section class="picture-data">
       <section class="picture">
-        <img src="${obj.url}" alt="${obj.title}">
+        ${media}
       </section>
       <section class="picture-info">
         <p>${obj.explanation}</p>
