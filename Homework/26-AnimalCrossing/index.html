@@ -12,11 +12,55 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<button type="button" name="button">Get random Anime</button>
 
-		<h2>Available fishes</h2>
+		<h2>Animal Crossing: New Horizon</h2>
+		<h3>Search and track</h3>
+		<form action="">
+			<div>
+				<p>Select the type:</p>
+				<input type="radio" id="type1" name="type" value="fish">
+				<label for="type1">Fish</label>
+				<input type="radio" id="type2" name="type" value="sea">
+				<label for="type2">Sea Creatures</label>
+				<input type="radio" id="type3" name="type" value="bugs">
+				<label for="type3">Bugs</label>
+			</div>
+
+			<div>
+				<p>Hemisphere</p>
+				<input type="radio" id="hemisphere1" name="hemisphere" value="northern">
+				<label for="hemisphere1">North</label>
+				<input type="radio" id="hemisphere2" name="hemisphere" value="southern">
+				<label for="hemisphere2">South</label>
+			</div>
+
+			<div>
+				<label for="month-select">Choose a month: </label>
+				<select id="month-select">
+					<option value="">--Please choose a month--</option>
+					<option value="january">January</option>
+					<option value="february">February</option>
+					<option value="march">March</option>
+					<option value="april">April</option>
+					<option value="may">May</option>
+					<option value="june">June</option>
+					<option value="july">July</option>
+					<option value="august">August</option>
+					<option value="september">September</option>
+					<option value="october">October</option>
+					<option value="november">November</option>
+					<option value="december">December</option>
+				</select>
+			</div>
+
+			<div>
+				<button type="submit">Search</button>
+			</div>
+		</form>
+
 		<section class="card-table"></section>
 
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
+
