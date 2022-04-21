@@ -1,11 +1,8 @@
-// document.querySelector('button').addEventListener('click', getFetch);
-
 document.querySelector('form').addEventListener('submit', getData, false);
 
 function getData(event) {
   const data = Object.fromEntries(new FormData(event.target).entries());
   getFetch(data);
-  console.log(data);
   event.preventDefault();
 }
 
@@ -13,12 +10,13 @@ function getData(event) {
 function getFetch(formData){
   const url = `https://acnhapi.com/v1/${formData['type']}`
   
-
   fetch(url)
       .then(res => res.json()) // parse response as JSON
       .then(data => {
         const cardTable = document.querySelector(".card-table");
+        // clear cardTable
         clearElement(cardTable)
+        // populate cardTable
         for(let key in data) {
           cardTable.innerHTML += createCard(data[key], formData) || '';
         }
@@ -35,6 +33,8 @@ function clearElement(element) {
 function createCard(obj, formData) {
   
   const monthAvailability = obj['availability'][`month-array-${formData['hemisphere']}`];
+
+  // Check if the fish/creature/bug is present during the selected month 
   const month = formData['month-select'] || '';
   if(month !=='' && !monthAvailability.includes(+month)) {
     return false;
@@ -80,9 +80,10 @@ function createCard(obj, formData) {
 
 function getSeasonalityRows(monthsArray) {
   const months = ['Jan','Feb','Mar.','Apr.','May','June','July','Aug.','Sep.','Oct.','Nov.','Dec.'];
-    
+  // creates table data - assign class of selected if the month is in the monthsArray
   let dataRow = months.map((month, index) => `<td><div ${monthsArray.includes(index+1) ? `class='active'` : ''}>${month}</div></td>`);
 
+  // reduces the data into a single string of tablerows
   return dataRow.reduce((acc, el, index) =>{
     if(index === 0) {
       acc += `<tr>${el}`;
@@ -107,7 +108,6 @@ function getSpecialPrice(obj) {
   } else if (obj['price-flick']) {
     vendor = 'Flick';
     price = obj['price-flick'];
-
   } else {
     return false;
   }
