@@ -22,7 +22,7 @@ img{
   justify-content: center;
   gap: 10px;
   margin: 0 auto;
-  padding: 10px 0;
+  padding: 10px;
   border: 2px solid grey;
   border-radius: 5px;
 }
@@ -30,6 +30,7 @@ img{
 .fish-card {
   /* width: 600px; */
   width: 48%;
+  min-width: 600px;
   border: 2px solid blue;
   display: flex;
   flex-flow: row wrap;
@@ -107,3 +108,15 @@ img{
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+
+@media screen and (max-width:1375px) {
+  .card-table {
+    width: 50vw;
+    min-width: 650px;
+  }
+
+
+  .fish-card {
+    width: 100%;
+  }
+}

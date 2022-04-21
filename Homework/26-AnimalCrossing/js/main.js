@@ -22,6 +22,7 @@ function getFetch(){
 }
 
 function createCard(obj) {
+  // console.log(obj);
   return `<section class="fish-card">
 				<section class="name">
 					<h3>${obj['name']['name-USen']}</h3>
@@ -32,7 +33,7 @@ function createCard(obj) {
             <h3>Seasonality</h3>
             <section>
               <table class="availability-month">
-                ${getSeasonalityRows(obj['month-array-northern'])}
+                ${getSeasonalityRows(obj['availability']['month-array-northern'])}
               </table>
             </section>
           </section>
@@ -63,29 +64,51 @@ function createCard(obj) {
 			</section>`;
 }
 
+// function getSeasonalityRows(monthsArray) {
+//   const months = ['Jan','Feb','Mar.','Apr.','May','June','July','Aug.','Sep.','Oct.','Nov.','Dec.'];
+
+//   monthsArray = monthsArray.sort((a, b) => a-b);
+
+//   return `
+//     <tr>
+//       <td><div>Jan</div></td>
+//       <td><div>Feb.</div></td>
+//       <td><div>Mar.</div></td>
+//       <td><div>Apr.</div></td>
+//     </tr>
+//     <tr>
+//       <td><div>May</div></td>
+//       <td><div>June</div></td>
+//       <td><div>July</div></td>
+//       <td><div>Aug.</div></td>
+//     </tr>
+//     <tr>
+//       <td><div>Sep.</div></td>
+//       <td><div>Oct.</div></td>
+//       <td><div>Nov.</div></td>
+//       <td><div>Dec.</div></td>
+//     </tr>
+//   `
+// }
+
 function getSeasonalityRows(monthsArray) {
   const months = ['Jan','Feb','Mar.','Apr.','May','June','July','Aug.','Sep.','Oct.','Nov.','Dec.'];
-
   
+	// // sort parameter array
+  // monthsArray = monthsArray.sort((a, b) => a-b);
+  
+  let dataRow = months.map((month, index) => `<td><div ${monthsArray.includes(index+1) ? `class='active'` : ''}>${month}</div></td>`);
 
-  return `
-    <tr>
-      <td><div>Jan</div></td>
-      <td><div>Feb.</div></td>
-      <td><div>Mar.</div></td>
-      <td><div>Apr.</div></td>
-    </tr>
-    <tr>
-      <td><div>May</div></td>
-      <td><div>June</div></td>
-      <td><div>July</div></td>
-      <td><div>Aug.</div></td>
-    </tr>
-    <tr>
-      <td><div>Sep.</div></td>
-      <td><div>Oct.</div></td>
-      <td><div>Nov.</div></td>
-      <td><div>Dec.</div></td>
-    </tr>
-  `
+  return dataRow.reduce((acc, el, index) =>{
+    if(index === 0) {
+      acc += `<tr>${el}`;
+    } else if (index+1 === dataRow.length) {
+      acc += `${el}</tr>`;
+    } else if((index+1)%4 === 0) {
+      acc += `${el}</tr><tr>`;
+    } else {
+      acc += el;
+    }
+    return acc;
+  },'');
 }
