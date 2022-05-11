@@ -1,0 +1,95 @@
+16 8kyuu completed
+
+8kyu - Function 1 - hello world
+https://www.codewars.com/kata/523b4ff7adca849afe000035/javascript
+
+8kyu - Convert a String to a Number!
+https://www.codewars.com/kata/544675c6f971f7399a000e79/train/javascript
+
+8kyu - Basic Mathematical Operations
+https://www.codewars.com/kata/57356c55867b9b7a60000bd7/javascript
+
+8kyu - Returning Strings
+https://www.codewars.com/kata/55a70521798b14d4750000a4/train/javascript
+
+8kyu - Abbreviate a Two Word Name
+https://www.codewars.com/kata/57eadb7ecd143f4c9c0000a3/solutions/javascript
+
+8kyu - Convert number to reversed array of digits
+https://www.codewars.com/kata/5583090cbe83f4fd8c000051/train/javascript
+
+8kyu - Is n divisible by x and y?
+https://www.codewars.com/kata/5545f109004975ea66000086/train/javascript
+
+8kyu - Convert a Boolean to a String
+https://www.codewars.com/kata/551b4501ac0447318f0009cd/train/javascript
+
+8kyu - You Can't Code Under Pressure #1
+https://www.codewars.com/kata/53ee5429ba190077850011d4/train/javascript
+
+8kyu - Invert values
+https://www.codewars.com/kata/5899dc03bc95b1bf1b0000ad/train/javascript
+
+8kyu - MakeUpperCase
+https://www.codewars.com/kata/57a0556c7cb1f31ab3000ad7/train/javascript
+
+8kyu - Get the mean of an array
+https://www.codewars.com/kata/563e320cee5dddcf77000158/train/javascript
+
+8kyu - Beginner Series #1 School Paperwork
+https://www.codewars.com/kata/55f9b48403f6b87a7c0000bd/train/javascript
+
+8kyu - Fake Binary
+https://www.codewars.com/kata/57eae65a4321032ce000002d/train/javascript
+
+8kyu - Is he gonna survive?
+https://www.codewars.com/kata/59ca8246d751df55cc00014c/train/javascript
+
+8kyu - Calculate average
+https://www.codewars.com/kata/57a2013acf1fa5bfc4000921/train/javascript
+
+6 7kyuu completed
+
+
+7kyu - Complementary DNA
+https://www.codewars.com/kata/554e4a2f232cdd87d9000038/train/javascript
+
+7kyu - Sum of two lowest positive integers
+https://www.codewars.com/kata/558fc85d8fd1938afb000014/train/javascript
+
+7kyu - Jaden Casing Strings
+https://www.codewars.com/kata/5390bac347d09b7da40006f6/train/javascript
+
+7kyu - Beginner Series #3 Sum of Numbers
+https://www.codewars.com/kata/55f2b110f61eb01779000053/train/javascript
+
+7kyu - Credit Card Mask
+https://www.codewars.com/kata/5412509bd436bd33920011bc/train/javascript
+
+7kyu - Is this a triangle?
+https://www.codewars.com/kata/56606694ec01347ce800001b/train/javascript
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
