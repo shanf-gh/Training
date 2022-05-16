@@ -1,5 +1,5 @@
 /* 
-Level: 
+Level: 6 kyuu
 Link: 
 */
 
