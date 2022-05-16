@@ -1,0 +1,10 @@
+/* 
+Level: 8 kyuu
+Link: https://www.codewars.com/kata/523b66342d0c301ae400003b/train/javascript
+*/
+
+function multiply(a, b) {
+    return a * b;
+  }
+
+/* Top solutions analysis */
