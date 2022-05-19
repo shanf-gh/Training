@@ -30,4 +30,4 @@ function persistence(num) {
     }
     
     return times;
- }
+}
