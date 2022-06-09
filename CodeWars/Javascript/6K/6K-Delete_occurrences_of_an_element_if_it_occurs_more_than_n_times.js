@@ -33,4 +33,4 @@ function deleteNth(arr,x) {
       cache[n] = (cache[n]||0) + 1;
       return cache[n] <= x;
     });
-  }
+}
